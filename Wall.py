@@ -27,8 +27,3 @@ y = 1800
 userarea = x * y
 wall = userarea / blockflat
 print(wall) 
-
-
-
-
-
