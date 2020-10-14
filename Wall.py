@@ -1,29 +1,19 @@
-#Brick code
+#Code in form of a class
 
-bricklenght = 75
-brickwidth = 225
-brickarea = bricklenght * brickwidth
-brick = brickarea
-#print(brick)
+class masonary:
 
-#Block flat code
-blockflatlenght = 112.5
-blockflatwidth = 450
-blockflatarea = blockflatlenght * blockflatwidth
-blockflat = blockflatarea
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-#Block edge code
-blockedgelenght = 225
-blockedgewidth = 450
-blockedgearea =blockedgelenght * blockedgewidth
-blockedge = blockedgearea
+    def area(self):
+        return self.length*self.width
+
+brick = masonary(75, 225)
+blockflat = masonary(112.5, 450)
+blockedge = masonary(225, 450)
 
 
-#Wall code
-x = 2700
-y = 1800
+wall = masonary(2700, 1800)
 
-
-userarea = x * y
-wall = userarea / blockflat
-print(wall) 
+print(wall.area())
