@@ -1,6 +1,6 @@
 #Code in form of a class
 
-class Masonary:
+class Masonry:
 
     def __init__(self, height, width):
         self.height = height
@@ -8,18 +8,20 @@ class Masonary:
 
     def area(self):
         return self.height*self.width
+ 
+brick = Masonry(75, 225)
+blockflat = Masonry(112.5, 450)
+blockedge = Masonry(225, 450)
 
-def amount_count(self, wall):
-    return brick.area()/ wall.area()
+class Wall(Masonry):
+    def __init__(self, height, width):
+        super().__init__(height, width)
+    def __truediv__(self, other):
+        return self.area/ other.area
+
+sample = Wall(2700, 1800)
     
 
-brick = Masonary(75, 225)
-blockflat = Masonary(112.5, 450)
-blockedge = Masonary(225, 450)
-
-
-wall = Masonary(2700, 1800)
-    
-
-print(wall.area())
-print(wall.area()/brick.area())
+print(sample.area())
+print(Wall.__truediv__(sample, brick))
+#print(type(brick.area))
