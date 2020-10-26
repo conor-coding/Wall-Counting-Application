@@ -7,7 +7,7 @@ class Masonry:
         self.width = width
 
     def area(self):
-        return self.height*self.width
+        return int(self.height*self.width)
  
 brick = Masonry(75, 225)
 blockflat = Masonry(112.5, 450)
@@ -17,14 +17,23 @@ class Wall(Masonry):
     def __init__(self, height, width):
         super().__init__(height, width)
     #Attempting to divide the sample wall area by the brick area
-    def __truediv__(self, other):
-        return self.area/ other.area
+
+    #def __truediv__(self, o):
+    #    x = self.area
+    #    y = o.area
+    #    return x/y
+
+def solution(area1, area2):
+    return int(area1.area()/ area2.area())
+
 
 #sample wall, I named it sample as not to confuse it with the Wall class
 sample = Wall(2700, 1800)
     
-#This print statement is my bane. I can't work out the formula to divide two methods together.
-print(Wall.__truediv__(sample, brick))
+#This print statement is my bane. I can't work out the formula to divide two methods
+#print(Wall.__truediv__(sample, brick))
 #These print statements are used to test if things are working.
 #print(sample.area())
 #print(brick.area())
+#print("You will need " + str(int(sample.area()/brick.area())) + " bricks to build the wall.")
+print(solution(sample, brick))
