@@ -1,3 +1,5 @@
+import math
+
 #Code in form of a class
 
 class Masonry:
@@ -18,16 +20,20 @@ class Wall(Masonry):
         super().__init__(height, width)
 
 def solution(area1, area2):
-    return int(area1.area()/ area2.area())
-
+    sol = float(area1.area()/ area2.area())
+    return sol
 
 #sample wall, I named it sample as not to confuse it with the Wall class
-sample = Wall(2700, 1800)
-    
+promptheight = input("Enter the height: ")
+promptwidth = input("Enter the width: ")
+sample = Wall(float(promptheight), float(promptwidth))
+
+#Used to round up to the nearest brick
+ans = math.ceil(solution(sample, blockedge))
 
 #These print statements are used to test if things are working.
 #print(sample.area())
 #print(brick.area())
 
 #The brick count solution
-print(solution(sample, brick))
+print(ans)
