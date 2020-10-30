@@ -35,5 +35,5 @@ ans = math.ceil(solution(sample, blockedge))
 #print(sample.area())
 #print(brick.area())
 
-#The brick count solution
+#The brick count solution 
 print(ans)
